@@ -1,4 +1,7 @@
 # cloudbuild.yaml
+options:
+  logging: CLOUD_LOGGING_ONLY  # ensures builds work without specifying logs bucket
+
 steps:
 # 1. Run tests (CI)
 - name: 'python:3.11'
