@@ -17,14 +17,14 @@ steps:
   args:
     - 'build'
     - '-t'
-    - 'us-central1-docker.pkg.dev/modified-wonder-468716-e8/my_repo/flask-app:$SHORT_SHA'
+    - 'us-central1-docker.pkg.dev/modified-wonder-468716-e8/myrepo/flask-app:$SHORT_SHA'
     - './app'
 
 # 3. Push Docker image
 - name: 'gcr.io/cloud-builders/docker'
   args:
     - 'push'
-    - 'us-central1-docker.pkg.dev/modified-wonder-468716-e8/my_repo/flask-app:$SHORT_SHA'
+    - 'us-central1-docker.pkg.dev/modified-wonder-468716-e8/myrepo/flask-app:$SHORT_SHA'
 
 # 4. Deploy to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -33,7 +33,7 @@ steps:
     - '-c'
     - |
       gcloud run deploy flask-app \
-        --image us-central1-docker.pkg.dev/modified-wonder-468716-e8/my_repo/flask-app:$SHORT_SHA \
+        --image us-central1-docker.pkg.dev/modified-wonder-468716-e8/myrepo/flask-app:$SHORT_SHA \
         --region us-central1 \
         --platform managed \
         --allow-unauthenticated
