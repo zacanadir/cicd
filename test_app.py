@@ -3,7 +3,7 @@
 # NEW_FEATURE BRANCH CHANGE
 # NEW_FEATURE 23
 #STATUS
-#COMMIT1
+#COMMIT2
 from app.main import app
 
 def test_home():
